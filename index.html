@@ -2,10 +2,18 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link href = "styles/style.css" rel = "stylesheet" type = "text/css">
 		<title>Clear My Headspace</title>
+		<link href = "styles/style.css" rel = "stylesheet">
 	</head>
 	<body>
-		<h1>Hello world<h1>
+		<script type="text/javascript" src="../node_modules/three/build/three.js"></script>
+		<script type="text/javascript" src = "js/script.js"></script>
+		<div id="question">How are you feeling?</div>
+		<div id="answer">
+			<form class="form">
+			<input type="email" class="form__field" placeholder="Tell me" />
+			<button type="button" class="btn btn--primary btn--inside uppercase">send</button>
+		</form>
+		</div>
 	</body>
 </html>
