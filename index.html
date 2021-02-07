@@ -3,12 +3,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Clear My Headspace</title>
-		<link href = "styles/style.css" rel = "stylesheet">
+		<link href = "styles/style.css" type="text/css" rel = "stylesheet">
 	</head>
 	<body>
-		<script type="text/javascript" src="three/build/three.js"></script>
+		<script src="https://www.designer-illusions.com/3d-experiments/rain/three.min.js"></script>
+		<!-- there's some broken/deprecated function calls to the most updated three.js that I don't know how to fix, gonna use this three.min.js for now -->
+		<!-- <script type="text/javascript" src="three/build/three.js"></script> -->
 		<script type="text/javascript" src = "js/script.js"></script>
-		<div id="question">How are you feeling?</div>
+		<div id="question">
+			<div>How are you feeling?</div>
+		</div>
 		<div id="answer">
 			<form class="form">
 			<input type="email" class="form__field" placeholder="Tell me" />
