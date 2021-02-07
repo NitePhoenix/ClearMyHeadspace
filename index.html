@@ -4,6 +4,11 @@
 		<meta charset="UTF-8">
 		<title>Clear My Headspace</title>
 		<link href = "styles/style.css" type="text/css" rel = "stylesheet">
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
 	</head>
 	<body>
 		<script src="https://www.designer-illusions.com/3d-experiments/rain/three.min.js"></script>
@@ -11,13 +16,22 @@
 		<!-- <script type="text/javascript" src="three/build/three.js"></script> -->
 		<script type="text/javascript" src = "js/script.js"></script>
 		<div id="question">
-			<div>How are you feeling?</div>
+			<p id="line1">How are you feeling?</p>
+			<p id="line2"></p>
 		</div>
-		<div id="answer">
-			<form class="form">
-			<input type="email" class="form__field" placeholder="Tell me" />
-			<button type="button" class="btn btn--primary btn--inside uppercase">send</button>
-		</form>
+
+		<div id="answer" class="container">
+			<div class="container__item">
+				<form class="form" method="post" onsubmit="question2(this.form);return false">
+					<input type="text" class="form__field" name="answer" placeholder="Tell me" id="q1"/>
+					<button type="submit" class="btn btn--primary btn--inside lower">send</button>
+				</form>
+			</div>
 		</div>
+
+		<audio controls src="sounds/2_Minute_Thunderstorm-Mike_Koenig-574654058.mp3" type="audio/mpeg" autoplay id="audio">
+			<p>If you are reading this, it is because your browser does not support the audio element.</p>
+			<embed src="sounds/2_Minute_Thunderstorm-Mike_Koenig-574654058.mp3" loop="true" width="180" height="90" hidden="true" />
+		</audio>
 	</body>
 </html>

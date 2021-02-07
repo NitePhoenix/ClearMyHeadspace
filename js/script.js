@@ -14,7 +14,7 @@ function init() {
 	*/
 
 	/*
-	// camera for sky
+	// camera pointing at sky
 	camera = new THREE.PerspectiveCamera(60,window.innerWidth / window.innerHeight, 1, 1000);
 	camera.position.z = 1;
 	camera.rotation.x = 1.16;
@@ -22,7 +22,7 @@ function init() {
 	camera.rotation.z = 0.27;
 	*/
 
-	// camera for tree
+	// camera pointing at tree
 	camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 1, 1000 );
     camera.position.z = 5;
 
@@ -121,6 +121,7 @@ function init() {
 
 	// add cloud
 	let loader = new THREE.TextureLoader();
+	// Change path?
 	loader.load("https://www.designer-illusions.com/3d-experiments/rain/smoke.png", function(texture){
 		cloudGeo = new THREE.PlaneBufferGeometry(500,500);
 		cloudMaterial = new THREE.MeshLambertMaterial({
@@ -184,6 +185,25 @@ function render() {
   renderer.render( scene, camera );
 }
 
+/*
+function sunrise(){
+	var hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.6 );
+    hemiLight.color.setHSV( 0.6, 0.75, 0.5 );
+    hemiLight.groundColor.setHSV( 0.095, 0.5, 0.5 );
+    hemiLight.position.set( 0, 500, 0 );
+    scene.add( hemiLight );
+
+    var dirLight = new THREE.DirectionalLight( 0xffffff, 1 );
+    dirLight.position.set( -1, 0.75, 1 );
+    dirLight.position.multiplyScalar( 50);
+    dirLight.name = "dirlight";
+    // dirLight.shadowCameraVisible = true;
+
+    scene.add( dirLight );
+    render();
+}
+*/
+
 // handles resizing window
 function onResize() {
 	camera.aspect = window.innerWidth / window.innerHeight;
@@ -192,6 +212,20 @@ function onResize() {
 	renderer.setSize(window.innerWidth, window.innerHeight);
 }
 window.addEventListener('resize', onResize, true);
+
+/*
+window.addEventListener("DOMContentLoaded", event => {
+  const audio = document.querySelector("audio");
+  audio.volume = 0.2;
+  audio.play();
+});
+*/
+
+function question2(form){
+	console.log("got it");
+	document.getElementById("line1").innerHTML = "Your feelings are valid.";
+}
+
 
 // start!
 window.onload = init;
